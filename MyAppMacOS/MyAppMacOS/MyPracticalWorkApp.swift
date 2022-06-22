@@ -14,7 +14,7 @@ struct MyPracticalWorkApp: App {
             //            ContentView()
             //            ContectView2()
             //            ContentView3()
-            ContentView4()
+            Segment()
         }
     }
 }

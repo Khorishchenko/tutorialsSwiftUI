@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		CE25B8F728633F18000F9B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE25B8F628633F18000F9B20 /* Assets.xcassets */; };
 		CE25B8FA28633F18000F9B20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE25B8F928633F18000F9B20 /* Preview Assets.xcassets */; };
-		CE25B90628633F7E000F9B20 /* MyPracticalWorkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25B90228633F7E000F9B20 /* MyPracticalWorkApp.swift */; };
-		CE25B90728633F7E000F9B20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25B90328633F7E000F9B20 /* ContentView.swift */; };
-		CE25B90828633F7E000F9B20 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25B90428633F7E000F9B20 /* ContentView2.swift */; };
-		CE25B90928633F7E000F9B20 /* ContentView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25B90528633F7E000F9B20 /* ContentView3.swift */; };
-		CE25B90B28633FFC000F9B20 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25B90A28633FFC000F9B20 /* Segment.swift */; };
+		CE71E17328634868006BEADA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71E17228634868006BEADA /* ContentView.swift */; };
+		CE71E1752863486C006BEADA /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71E1742863486C006BEADA /* ContentView2.swift */; };
+		CE71E1772863486F006BEADA /* ContentView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71E1762863486F006BEADA /* ContentView3.swift */; };
+		CE71E17928634879006BEADA /* MyPracticalWorkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71E17828634879006BEADA /* MyPracticalWorkApp.swift */; };
+		CE71E17B286348A0006BEADA /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71E17A286348A0006BEADA /* Segment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,11 +22,11 @@
 		CE25B8F928633F18000F9B20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE25B8FB28633F18000F9B20 /* MyAppMacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyAppMacOS.entitlements; sourceTree = "<group>"; };
 		CE25B90128633F7E000F9B20 /* MyAppMacOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyAppMacOS-Bridging-Header.h"; sourceTree = "<group>"; };
-		CE25B90228633F7E000F9B20 /* MyPracticalWorkApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyPracticalWorkApp.swift; path = ../../tutorialsSwiftUI/tutorialsSwiftUI/MyPracticalWorkApp.swift; sourceTree = "<group>"; };
-		CE25B90328633F7E000F9B20 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../../tutorialsSwiftUI/tutorialsSwiftUI/ContentView.swift; sourceTree = "<group>"; };
-		CE25B90428633F7E000F9B20 /* ContentView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView2.swift; path = ../../tutorialsSwiftUI/tutorialsSwiftUI/ContentView2.swift; sourceTree = "<group>"; };
-		CE25B90528633F7E000F9B20 /* ContentView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView3.swift; path = ../../tutorialsSwiftUI/tutorialsSwiftUI/ContentView3.swift; sourceTree = "<group>"; };
-		CE25B90A28633FFC000F9B20 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Segment.swift; path = ../../MyAppTS/MyAppiOS/Segment.swift; sourceTree = "<group>"; };
+		CE71E17228634868006BEADA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CE71E1742863486C006BEADA /* ContentView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
+		CE71E1762863486F006BEADA /* ContentView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView3.swift; sourceTree = "<group>"; };
+		CE71E17828634879006BEADA /* MyPracticalWorkApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPracticalWorkApp.swift; sourceTree = "<group>"; };
+		CE71E17A286348A0006BEADA /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +60,11 @@
 			isa = PBXGroup;
 			children = (
 				CE25B8F628633F18000F9B20 /* Assets.xcassets */,
-				CE25B90328633F7E000F9B20 /* ContentView.swift */,
-				CE25B90428633F7E000F9B20 /* ContentView2.swift */,
-				CE25B90528633F7E000F9B20 /* ContentView3.swift */,
-				CE25B90A28633FFC000F9B20 /* Segment.swift */,
-				CE25B90228633F7E000F9B20 /* MyPracticalWorkApp.swift */,
+				CE71E17828634879006BEADA /* MyPracticalWorkApp.swift */,
+				CE71E17228634868006BEADA /* ContentView.swift */,
+				CE71E1742863486C006BEADA /* ContentView2.swift */,
+				CE71E1762863486F006BEADA /* ContentView3.swift */,
+				CE71E17A286348A0006BEADA /* Segment.swift */,
 				CE25B8FB28633F18000F9B20 /* MyAppMacOS.entitlements */,
 				CE25B8F828633F18000F9B20 /* Preview Content */,
 				CE25B90128633F7E000F9B20 /* MyAppMacOS-Bridging-Header.h */,
@@ -151,11 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE25B90828633F7E000F9B20 /* ContentView2.swift in Sources */,
-				CE25B90B28633FFC000F9B20 /* Segment.swift in Sources */,
-				CE25B90728633F7E000F9B20 /* ContentView.swift in Sources */,
-				CE25B90928633F7E000F9B20 /* ContentView3.swift in Sources */,
-				CE25B90628633F7E000F9B20 /* MyPracticalWorkApp.swift in Sources */,
+				CE71E17928634879006BEADA /* MyPracticalWorkApp.swift in Sources */,
+				CE71E17B286348A0006BEADA /* Segment.swift in Sources */,
+				CE71E17328634868006BEADA /* ContentView.swift in Sources */,
+				CE71E1752863486C006BEADA /* ContentView2.swift in Sources */,
+				CE71E1772863486F006BEADA /* ContentView3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
