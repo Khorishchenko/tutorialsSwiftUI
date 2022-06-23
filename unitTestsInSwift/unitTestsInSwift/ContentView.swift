@@ -14,22 +14,48 @@ struct ContentView: View {
     }
 }
 
+enum classTestError {
+    case tetsThrows
+}
+
+extension classTestError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .tetsThrows:
+            return NSLocalizedString("Test throws", comment: "Test" )
+        }
+    }
+}
+
 class UnitTest {
     
-    func sum(a: Int, b: Int) -> Int {
-        return a + b;
+    func trueFalse(m_value: Int) throws -> Bool {
+        
+        if m_value == 0 {
+            return false
+        }
+        else if m_value < 0 {
+            throw classTestError.tetsThrows
+        }
+        else {
+            return true
+        }
     }
     
-    func minus(a: Int, b: Int) -> Int {
-        return a - b;
+    func sum(m_value1: Int, m_value2: Int) -> Int {
+        return m_value1 + m_value2;
     }
     
-    func divide(a: Int, b: Int) -> Int {
-        return a / b;
+    func minus(m_value1: Int, m_value2: Int) -> Int {
+        return m_value1 - m_value2;
     }
     
-    func multiply(a: Int, b: Int) -> Int {
-        return a * b;
+    func divide(m_value1: Int, m_value2: Int) -> Int {
+        return m_value1 / m_value2;
+    }
+    
+    func multiply(m_value1: Int, m_value2: Int) -> Int {
+        return m_value1 * m_value2;
     }
 }
 

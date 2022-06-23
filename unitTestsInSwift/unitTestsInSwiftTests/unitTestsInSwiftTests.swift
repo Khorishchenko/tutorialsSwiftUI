@@ -24,17 +24,36 @@ class unitTestsInSwiftTests: XCTestCase {
         
         try super.tearDownWithError()
     }
-
     
+    
+    
+    func testClass_TrueFalse_ThrowsException() {
+        
+        XCTAssertThrowsError(try unitTest.trueFalse(m_value: -1))
+        XCTAssertEqual(try unitTest.trueFalse(m_value: 1), true)
+        XCTAssertEqual(try unitTest.trueFalse(m_value: 0), false)
+    }
+    
+    func testClass_MultiplyFunction() {
+        XCTAssertEqual(2 * 2, unitTest.multiply(m_value1: 2, m_value2: 2))
+    }
+    
+    func testClass_SumFunction() {
+        XCTAssertEqual(2 + 2, unitTest.sum(m_value1: 2, m_value2: 2))
+    }
+    
+    func testClass_DivideFunction() {
+        XCTAssertEqual(2 / 2, unitTest.divide(m_value1: 2, m_value2: 2))
+    }
+    
+    func testClass_MinusFunction() {
+        XCTAssertEqual(2 - 2, unitTest.minus(m_value1: 2, m_value2: 2))
+    }
+
     // метод самого теста
     func testExample() throws {
       
-        XCTAssertEqual(2 + 2, unitTest.sum(a: 2, b: 2))
-        XCTAssertEqual(2 * 2, unitTest.multiply(a: 2, b: 2))
-        XCTAssertEqual(2 / 2, unitTest.divide(a: 2, b: 2))
-        XCTAssertEqual(2 - 2, unitTest.minus(a: 2, b: 2))
     }
-    
     
     // метод тестирования скорости выполнения определённого блока кода
     func testPerformanceExample() throws {
