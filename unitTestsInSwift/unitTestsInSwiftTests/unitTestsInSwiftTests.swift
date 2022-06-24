@@ -44,19 +44,19 @@ class unitTestsInSwiftTests: XCTestCase {
         XCTAssertThrowsError(try unitTest.trueFalse(m_value: -1))
     }
     
-    func testClass_MultiplyFunction() {
+    func testMultiply_MultiplyValues_ResultOfMultiplication() {
         XCTAssertEqual(2 * 2, unitTest.multiply(m_value1: 2, m_value2: 2))
     }
     
-    func testClass_SumFunction() {
+    func testSum_SumValues_ResultOfSum() {
         XCTAssertEqual(2 + 2, unitTest.sum(m_value1: 2, m_value2: 2))
     }
     
-    func testClass_DivideFunction() {
+    func testDivide_DivideValues_ResultOfDivide() {
         XCTAssertEqual(2 / 2, unitTest.divide(m_value1: 2, m_value2: 2))
     }
     
-    func testClass_MinusFunction() {
+    func testMinus_MinusValues_ResultOfMinus() {
         XCTAssertEqual(2 - 2, unitTest.minus(m_value1: 2, m_value2: 2))
     }
 
