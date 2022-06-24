@@ -14,12 +14,11 @@ struct ContentView: View {
     }
 }
 
-enum classTestError {
+enum classTestError: LocalizedError {
     case tetsThrows
-}
-
-extension classTestError: LocalizedError {
-    public var errorDescription: String? {
+    
+    public var errorDescription: String?
+    {
         switch self {
         case .tetsThrows:
             return NSLocalizedString("Test throws", comment: "Test" )
@@ -27,7 +26,7 @@ extension classTestError: LocalizedError {
     }
 }
 
-class UnitTest {
+class UnitTest: LocalizedError {
     
     func trueFalse(m_value: Int) throws -> Bool {
         
@@ -56,11 +55,5 @@ class UnitTest {
     
     func multiply(m_value1: Int, m_value2: Int) -> Int {
         return m_value1 * m_value2;
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

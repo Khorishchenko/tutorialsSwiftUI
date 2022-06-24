@@ -21,17 +21,27 @@ class unitTestsInSwiftTests: XCTestCase {
 
     override func tearDownWithError() throws {
         // убираем объект из памяти после окончания теста, освобождая память для запуска следующих тестов
-        
         try super.tearDownWithError()
     }
     
+    func testClassTestError_ReturnsAnError_ThrowsException() throws {
+        
+        XCTAssertThrowsError(try unitTest.trueFalse(m_value: -1)) { error in
+            XCTAssertEqual(error as? classTestError, classTestError.tetsThrows)
+        }
+    }
     
+    func testTrueFalse_ValueEqualOne_ReturnFalse() {
+        XCTAssertEqual(try unitTest.trueFalse(m_value: 1), true)
+    }
     
-    func testClass_TrueFalse_ThrowsException() {
+    func testTrueFalse_ValueEqualZero_ReturnFalse()  {
+        XCTAssertEqual(try unitTest.trueFalse(m_value: 0), false)
+    }
+    
+    func testTrueFalse_ValueLessThanOne_ThrowsException() throws {
         
         XCTAssertThrowsError(try unitTest.trueFalse(m_value: -1))
-        XCTAssertEqual(try unitTest.trueFalse(m_value: 1), true)
-        XCTAssertEqual(try unitTest.trueFalse(m_value: 0), false)
     }
     
     func testClass_MultiplyFunction() {
