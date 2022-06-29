@@ -31,7 +31,7 @@ class unitTestsInSwiftTests: XCTestCase {
         }
     }
     
-    func testTrueFalse_ValueEqualOne_ReturnFalse() {
+    func testTrueFalse_ValueEqualOne_ReturnTrue() {
         XCTAssertEqual(try unitTest.trueFalse(m_value: 1), true)
     }
     
