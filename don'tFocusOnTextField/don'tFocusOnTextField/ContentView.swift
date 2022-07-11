@@ -30,17 +30,17 @@ struct ContentView: View {
                     .cornerRadius(10)
                     .focused($useNameFocus)
 
-    //              TODO: dont focus on TextField because Mouse hover
+//                  TODO: drop focus on TextField because Mouse hover
 
-//                    .onHover { hover in
-//                            print("Mouse hover: \(hover)")
-//                        if hover {
-//                            self.useNameFocus = false
-//                        }
-//                        else {
-//                            self.useNameFocus = false
-//                        }
-//                    }
+                    .onHover { hover in
+                            print("Mouse hover: \(hover)")
+                        if hover {
+                            self.useNameFocus = false
+                        }
+                        else {
+                            self.useNameFocus = false
+                        }
+                    }
 
                     Button(action: {
     //              TODO: dont focus on TextField because clic Button
@@ -61,13 +61,13 @@ struct ContentView: View {
                 }
                 Spacer()
         }
-        .contentShape(Rectangle())
-        .onTapGesture {
-          print("The whole VStack is tappable now!")
-            if useNameFocus {
-                useNameFocus.toggle()
-            }
-        }
+//        .contentShape(Rectangle())
+//        .onTapGesture {
+//          print("The whole VStack is tappable now!")
+//            if useNameFocus {
+//                useNameFocus.toggle()
+//            }
+//        }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
                 self.useNameFocus = false

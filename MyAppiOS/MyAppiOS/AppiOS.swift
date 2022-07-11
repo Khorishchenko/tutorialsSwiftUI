@@ -12,7 +12,8 @@ struct MyAppTSApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-            Segment()
+//            Segment()
+            ContentViewFocus()
         }
     }
 }
