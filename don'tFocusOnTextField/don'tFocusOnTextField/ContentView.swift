@@ -28,7 +28,7 @@ struct ContentView: View {
                     .disableAutocorrection(true)
                     .textFieldStyle(.roundedBorder)
                     .cornerRadius(10)
-                    .focusedValue($useNameFocus, none)
+                    .focused($useNameFocus)
 
 //                  TODO: drop focus on TextField because Mouse hover
 
