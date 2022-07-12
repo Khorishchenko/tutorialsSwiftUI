@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2D4CA1287D75410017CB26 /* dropFocus2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D4CA0287D75410017CB26 /* dropFocus2.swift */; };
+		CE2D4CA3287D75AE0017CB26 /* DropFocus3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D4CA2287D75AE0017CB26 /* DropFocus3.swift */; };
 		CEE91FDD28759206009A2DC3 /* don_tFocusOnTextFieldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91FDC28759206009A2DC3 /* don_tFocusOnTextFieldApp.swift */; };
 		CEE91FDF28759206009A2DC3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91FDE28759206009A2DC3 /* ContentView.swift */; };
 		CEE91FE128759209009A2DC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE91FE028759209009A2DC3 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE2D4CA0287D75410017CB26 /* dropFocus2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dropFocus2.swift; sourceTree = "<group>"; };
+		CE2D4CA2287D75AE0017CB26 /* DropFocus3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropFocus3.swift; sourceTree = "<group>"; };
 		CEE91FD928759206009A2DC3 /* don'tFocusOnTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "don'tFocusOnTextField.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE91FDC28759206009A2DC3 /* don_tFocusOnTextFieldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = don_tFocusOnTextFieldApp.swift; sourceTree = "<group>"; };
 		CEE91FDE28759206009A2DC3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			children = (
 				CEE91FDC28759206009A2DC3 /* don_tFocusOnTextFieldApp.swift */,
 				CEE91FDE28759206009A2DC3 /* ContentView.swift */,
+				CE2D4CA0287D75410017CB26 /* dropFocus2.swift */,
+				CE2D4CA2287D75AE0017CB26 /* DropFocus3.swift */,
 				CEE91FE028759209009A2DC3 /* Assets.xcassets */,
 				CEE91FE528759209009A2DC3 /* don_tFocusOnTextField.entitlements */,
 				CEE91FE228759209009A2DC3 /* Preview Content */,
@@ -140,7 +146,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE91FDF28759206009A2DC3 /* ContentView.swift in Sources */,
+				CE2D4CA1287D75410017CB26 /* dropFocus2.swift in Sources */,
 				CEE91FDD28759206009A2DC3 /* don_tFocusOnTextFieldApp.swift in Sources */,
+				CE2D4CA3287D75AE0017CB26 /* DropFocus3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
