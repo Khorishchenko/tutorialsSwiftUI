@@ -15,7 +15,10 @@ struct don_tFocusOnTextFieldApp: App {
 //            ContentView2()
 //            LoginForm()
 //            ContentView3()
-            Notif()
+//            Notif()
+//            Geometry()
+//            ContentViewOTextField()
+            ExampleView()
         }
     }
 }

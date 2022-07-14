@@ -1,14 +1,15 @@
 //
-//  ContentView.swift
+//  AnotherAttemptToImplementDropFocus.swift
 //  don'tFocusOnTextField
 //
-//  Created by user on 06.07.2022.
+//  Created by user on 13.07.2022.
 //
 
+import Foundation
 import SwiftUI
 
 
-struct ContentView: View {
+struct ContentViewOTextField: View {
     @State private var m_licenseKey: String = ""
     @FocusState private var useNameFocus: Bool
 
@@ -19,28 +20,7 @@ struct ContentView: View {
                 HStack {
                     Text("license key:")
 
-
-                    TextField(
-                        "",
-                        text: $m_licenseKey
-                    )
-                    .background(Color.gray)
-                    .disableAutocorrection(true)
-                    .textFieldStyle(.roundedBorder)
-                    .cornerRadius(10)
-                    .focused($useNameFocus)
-
-//                  TODO: drop focus on TextField because Mouse hover
-
-//                    .onHover { hover in
-//                            print("Mouse hover: \(hover)")
-//                        if hover {
-//                            self.useNameFocus = false
-//                        }
-//                        else {
-//                            self.useNameFocus = false
-//                        }
-//                    }
+                    OTextField(saveText: $m_licenseKey)
 
                     Button(action: {
     //              TODO: dont focus on TextField because clic Button
@@ -59,20 +39,46 @@ struct ContentView: View {
                     })
                     .padding(10)
                 }
-                Spacer()
+        }
+        .frame(width: 700, height: 425)
+    }
+}
+
+
+struct OTextField: View {
+    
+    @FocusState private var m_stateFocus: Bool
+    @Binding private var m_saveText: String
+    
+    init(saveText: Binding<String>){
+        _m_saveText = saveText
+    }
+    
+    var body: some View {
+        Group {
+            TextField(
+                "",
+                text: $m_saveText
+            )
+            .background(Color.gray)
+            .disableAutocorrection(true)
+            .textFieldStyle(.roundedBorder)
+            .cornerRadius(10)
+            .focused($m_stateFocus)
+            Spacer()
+            
         }
         .contentShape(Rectangle())
         .onTapGesture {
           print("The whole VStack is tappable now!")
-            if useNameFocus {
-                useNameFocus.toggle()
+            if m_stateFocus {
+                m_stateFocus.toggle()
             }
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
-                self.useNameFocus = false
+                self.m_stateFocus = false
             }
         }
-        .frame(width: 700, height: 425)
     }
 }
