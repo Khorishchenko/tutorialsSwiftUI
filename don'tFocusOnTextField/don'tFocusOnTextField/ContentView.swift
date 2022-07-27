@@ -43,7 +43,7 @@ struct ContentView: View {
 //                    }
 
                     Button(action: {
-    //              TODO: dont focus on TextField because clic Button
+    //              TODO: drop focus on TextField because clic Button
                         if useNameFocus {
                             useNameFocus.toggle()
                         }

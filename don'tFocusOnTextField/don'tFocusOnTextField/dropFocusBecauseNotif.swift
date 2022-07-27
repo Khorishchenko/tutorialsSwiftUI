@@ -1,35 +1,41 @@
-//
-//  dropFocusBecauseNotif.swift
-//  don'tFocusOnTextField
-//
-//  Created by user on 12.07.2022.
-//
+// TODO: Description
+// Сейчас если кликнуть на TextView, он фокусируется(т.е. выделяется синим), но фокус не сбрасывается если кликнуть вне TextView.
+// Проверить что работает если кликнуть на бэкграунд, и если кликнуть на другие элементы - фокус сбрасывается тоже.
+// Нужно разресерчить решение, и написать тестовый проект, который решает эту проблему.
+// Не интегрировать решение в проект OrkaDekstop
+// Не использовать сторонних либ, пытаться только через SwiftUI
 
 import Foundation
 import SwiftUI
 import Cocoa
 
+
+
+// TODO: The best solution
+
 public extension Notification.Name {
     static let dropFocus = Notification.Name.init("dropFocus")
 }
 
-struct Notif: View {
+struct Clic: View {
     
-
-   
+    @State var m_text: String = ""
     
     var body: some View {
-        Group {
-            notif()
-                .frame(width: 700, height: 425)
-                .fixedSize()
-        }
-        .onAppear() {
-            NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown]) { obj in
+        VStack {
+            OTextField2(saveText: $m_text)
+                .disableAutocorrection(true)
+                .textFieldStyle(.roundedBorder)
+                .frame(width: 220, height: 20, alignment: .center)
                 
-                print(obj.locationInWindow.x, obj.locationInWindow.y)
-                let Point = (x: CGFloat(obj.locationInWindow.x), y: CGFloat(obj.locationInWindow.y))
-                NotificationCenter.default.post(name: Notification.Name.dropFocus, object: Point)
+        }
+        .frame(width: 700, height: 425)
+        .fixedSize()
+        .onAppear()
+        {
+            // TODO: We find out the coordinates of the click
+            NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown]) { obj in
+                NotificationCenter.default.post(name: Notification.Name.dropFocus, object: (x: obj.locationInWindow.x, y: obj.locationInWindow.y))
                 
                 return obj
             }
@@ -37,67 +43,41 @@ struct Notif: View {
     }
 }
 
-struct notif: View {
+// TODO: Implementation of rectangle for resetting focus
+
+struct OTextField2: View {
     
-    @State var m_text: String = ""
-    @FocusState var focus: Bool
+    @FocusState private var m_stateFocus: Bool
+    @Binding private var m_saveText: String
+    
+    init(saveText: Binding<String>) {
+        _m_saveText = saveText
+    }
     
     var body: some View {
-        VStack {
-            GeometryReader { geometry in
-                Group {
-                    TextField(
-                        "",
-                        text: $m_text
-                    )
-                    .background(Color.gray)
-                    .disableAutocorrection(true)
-                    .textFieldStyle(.roundedBorder)
-                    .cornerRadius(10)
-                    .padding()
-                    .focused($focus)
-                    
-                    
-                }
-                .onReceive(NotificationCenter.default.publisher(for: .dropFocus)) { notif in
-                    if var data = notif.object {
-                        print(data)
-                        
-                        print(notif)
-                        
-                        let frame = geometry.frame(in: CoordinateSpace.local)
-                        
-                        let frame2 = (x: frame.midX, y: frame.midY )
-                        print(frame2)
-                        
-                        data = (x: 350.0, y: 212.5)
-                        
-                        if focus && data as! (CGFloat, CGFloat) != frame2 {
-                            focus.toggle()
-                        }
-                    }
-                }
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1){
-                        self.focus = false
+        GeometryReader { geometry in
+            Group {
+                TextField(
+                    "",
+                    text: $m_saveText
+                )
+                .focused($m_stateFocus)
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .dropFocus)) { notif in
+                let frame = geometry.frame(in: CoordinateSpace.global)
+                
+                
+                // TODO: An implementation of checking whether a click is in the range of a rectangle
+                
+                if let data = notif.object as? (x: CGFloat, y: CGFloat)
+                {
+                    // TODO: the formula for calculating the coincidence of the coordinates of the click and the TextField
+                    if m_stateFocus && !((data.y >= (CGFloat(425) - frame.minY)) && (data.y <= ((CGFloat(425) - frame.minY) + frame.height)) && ((data.x >= frame.minX) && (data.x <= (frame.minX + frame.width))))
+                    {
+                        m_stateFocus.toggle()
                     }
                 }
             }
         }
     }
 }
-
-//class ViewController: NSViewController {
-//
-//    var mouseLocation: NSPoint { NSEvent.mouseLocation }
-//
-//    override func viewDidLoad() {
-//
-//        super.viewDidLoad()
-//        NSEvent.addLocalMonitorForEvents(matching: [.leftMouseDown]) {
-//            print("mouseLocation:", String(format: "%.1f, %.1f", self.mouseLocation.x, self.mouseLocation.y))
-//            NotificationCenter.default.post(name: Notification.Name.dropFocus, object: self.mouseLocation)
-//            return $0
-//        }
-//    }
-//}
