@@ -166,6 +166,7 @@ print(informalGreeting)
 
 
 let vegetable = "red pepper"
+
 switch vegetable {
 case "celery":
     print("Add some raisins and make ants on a log.")
@@ -343,7 +344,7 @@ travel { (place: String) in
     print("I am going to \(place) in my car")
 }
 
-//--------------------------------------------
+print("--------------------------------------------\n")
 
 
 let changeSpeed = { (speed: Int) in
@@ -364,7 +365,282 @@ func travel2(action: (String) -> String) {
     print(present)
 }
 
-travel2 { <#String#> in
-    <#code#>
+travel2 { (place: String) -> String in
+    return "Hello \(place), How are you ?"
 }
+
+print("--------------------------------------------\n")
+
+func travel3(action: (String) -> String) {
+    let present_N = action("London")
+    print(present_N)
+}
+
+travel3 { place in
+    "Go to \(place)"
+}
+
+
+print("--------------------------------------------\n")
+
+func travel5(action: (String, Int) -> String) {
+    let arr = action("London", 3500)
+    print(arr)
+}
+
+travel5 {
+    "I am go to \($0), in with here \($1) kph"
+}
+
+
+print("--------------------------------------------\n")
+
+
+func travel6() -> (String) -> Void {
+    var counter = 1
+    return {
+        print ("\(counter) I am going to \($0)")
+        counter += 1
+    }
+}
+
+
+let result = travel6()
+
+result("London")
+result("London")
+result("London")
+
+print("--------------------------------------------\n")
+
+
+
+// MARK: Enum
+print("--------------------------------------")
+print("enum\n")
+
+enum Activity {
+    case dancing
+    case running
+    case talking
+    case singing
+}
+
+let currentActivity = Activity.dancing
+
+
+switch (currentActivity) {
+    
+case .dancing: print("Dance")
+case .running: print("Run")
+case .talking: print("Talk")
+case .singing: print("Sing")
+    
+}
+
+print("--------------------------------------")
+
+enum Activity2 {
+    case dancing
+    case running(dectination: String)
+    case talking(topic: String)
+    case singing(volume: Int)
+}
+
+let talking = Activity2.talking(topic: "Foot")
+
+switch (currentActivity) {
+    
+case .dancing: print("Dance")
+case .running: print("Run")
+case .talking: print("Talk")
+case .singing: print("Sing")
+    
+}
+
+print("--------------------------------------")
+
+enum Planet: Int {
+    case mercury = 1
+    case venus
+    case earth
+    case mars
+}
+
+
+let earth = Planet(rawValue: 3)
+print(earth!.rawValue)
+print(earth!)
+print(earth)
+
+
+print("--------------------------------------")
+
+enum Phone: String {
+    case Apple = "iPhone 8"
+    case Samsung = "Galaxy S10"
+    case Google = "Pixel 2"
+}
+
+var myPhone = Phone.Apple
+
+print(myPhone)
+print(myPhone.rawValue)
+print("--------------------------------------")
+
+// MARK: Class
+print("Class\n")
+
+
+class Human {
+    
+    var age: Int
+    var name: String
+    
+    // TODO: Вычисляемые свойства
+    var status: String {
+        if isQualified {
+            return "\(name) is qualifeds for this job "
+        }
+        else {
+            return "\(name) is not  qualifeds for this job "
+        }
+    }
+    
+    var isQualified: Bool
+    
+    init(age: Int, name: String, isQualified: Bool) {
+        self.age = age
+        self.name = name
+        self.isQualified = isQualified
+    }
+}
+
+
+var igor = Human(age: 23, name: "Igor", isQualified: false)
+
+print(igor.status)
+
+//var name value: type values {
+//    get {
+//
+//    }
+//    set {
+//
+//    }
+//}
+
+print("--------------------------------------")
+
+class Account {
+    
+    var sum: Double = 0
+    var rate: Double = 0.01
+    
+    var profit: Double {
+        get {
+            return sum + sum * rate
+        }
+        set(newProfit) {
+            self.sum = newProfit / (1 + rate)
+        }
+    }
+    
+    init (sum: Double, rate: Double) {
+        self.sum = sum
+        self.rate = rate
+    }
+}
+
+var myAcc: Account = Account(sum: 1000, rate: 0.1)
+
+print(myAcc.profit)
+
+myAcc.profit = 2000
+
+print(myAcc.sum)
+
+
+print("--------------------------------------")
+
+
+class Acc {
+    
+    var sum: Double {
+        willSet (newSum) {
+            print("Previus sum: \(self.sum) / New sum: \(newSum)")
+        }
+        
+        didSet(oldSum) {
+            print("Sum increased by: \(self.sum - oldSum)")
+        }
+    }
+    
+    var rate: Double = 0.01
+    
+    init(sum: Double) {
+        self.sum = sum
+    }
+}
+
+var newValue = Acc(sum: 100)
+
+print("--------------------------------------")
+// TODO: How to work didSet!
+print("How to work didSet!")
+
+class Dog {
+    
+    var name: String
+    var age: Int {
+        didSet {
+            if age > maxAge {
+                age = oldValue
+            }
+        }
+    }
+    
+    var maxAge = 30
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+}
+
+var dog = Dog(name: "Sobaka", age: 5)
+
+print(dog.age)
+
+dog.age = 31
+
+print(dog.age)
+print("--------------------------------------")
+
+
+// MARK: Struct
+print("Struct\n")
+
+
+// TODO: mutating
+struct Person {
+    var name: String
+    
+    mutating func makeAnon() { // TODO: mutating - For the function to work
+        name = "nonName"
+    }
+}
+
+
+var Oleg = Person(name: "Oleg")
+
+print(Oleg.name)
+
+Oleg.makeAnon()
+
+print(Oleg.name)
+print("--------------------------------------")
+
+
+
 
